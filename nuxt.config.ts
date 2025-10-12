@@ -80,6 +80,7 @@ export default defineNuxtConfig({
 			platform: process.platform,
 			arch: process.arch,
 			ci: process.env.TENCENTCLOUD_RUNENV === 'SCF' ? 'EdgeOne' : ci.name || '',
+			env: process.env,
 		},
 	},
 
