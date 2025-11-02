@@ -34,5 +34,7 @@
   "vue.inlayHints.inlineHandlerLeading": true,
   "vue.inlayHints.missingProps": true,
   "vue.inlayHints.vBindShorthand": true,
-  "yaml.format.singleQuote": true
+  "yaml.format.singleQuote": true,
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontSize": 14
 }

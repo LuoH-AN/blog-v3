@@ -31,7 +31,7 @@ export default defineAppConfig({
 
 		stats: {
 			/** 归档页面每年标题对应的年龄 */
-			birthYear: 2003,
+			birthYear: 2011,
 			/** blog-stats widget 的预置文本 */
 			wordCount: '约10万',
 		},
@@ -43,26 +43,25 @@ export default defineAppConfig({
 		copyright: `© ${new Date().getFullYear()} ${blogConfig.author.name}`,
 		/** 侧边栏底部图标导航 */
 		iconNav: [
-			{ icon: 'ph:house-bold', text: '个人主页', url: blogConfig.author.homepage },
-			{ icon: 'ri:qq-line', text: '交流群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
-			{ icon: 'ph:github-logo-bold', text: 'GitHub: L33Z22L11', url: 'https://github.com/L33Z22L11' },
-			{ icon: 'ph:rss-simple-bold', text: 'Atom订阅', url: '/atom.xml' },
+			{ icon: 'ph:house-bold', text: '主页', url: blogConfig.author.homepage },
+			{ icon: 'ph:github-logo-bold', text: 'GitHub: LuoH-AN', url: 'https://github.com/LuoH-AN' },
+			{ icon: 'ph:rss-simple-bold', text: '订阅', url: '/atom.xml' },
 			{ icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/' },
+			{ icon: 'game-icons:cigale', text: '揪蝉', url: 'https://jiuchan.org/' },
 		] satisfies NavItem[],
 		/** 页脚站点地图 */
 		nav: [
 			{
 				title: '探索',
 				items: [
-					{ icon: 'ph:rss-simple-bold', text: 'Atom订阅', url: '/atom.xml' },
+					{ icon: 'ph:rss-simple-bold', text: '订阅', url: '/atom.xml' },
 					{ icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/' },
 				],
 			},
 			{
 				title: '社交',
 				items: [
-					{ icon: 'ph:github-logo-bold', text: 'L33Z22L11', url: 'https://github.com/L33Z22L11' },
-					{ icon: 'ri:qq-line', text: '群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
+					{ icon: 'ph:github-logo-bold', text: 'LuoH-AN', url: 'https://github.com/LuoH-AN' },
 					{ icon: 'ph:envelope-simple-bold', text: blogConfig.author.email, url: `mailto:${blogConfig.author.email}` },
 				],
 			},
@@ -70,8 +69,8 @@ export default defineAppConfig({
 				title: '信息',
 				items: [
 					{ icon: 'simple-icons:nuxtdotjs', text: `主题: Clarity ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
-					{ icon: 'ph:swatches-bold', text: '主题和组件文档', url: '/theme' },
-					{ icon: 'ph:certificate-bold', text: '陕ICP备2025072742号-3', url: 'https://beian.miit.gov.cn/' },
+					{ icon: 'ph:certificate-bold', text: '萌ICP备20250355号', url: 'https://icp.gov.moe/?keyword=20250355' },
+					{ icon: 'ph:certificate-bold', text: '雾ICP备20110419号', url: 'https://icp.wudu.ltd/id.php?keyword=20110419' },
 				],
 			},
 		] satisfies Nav,
@@ -79,11 +78,11 @@ export default defineAppConfig({
 
 	/** 左侧栏顶部 Logo */
 	header: {
-		logo: 'https://weavatar.com/avatar/47c0f2e82b76d9b10eb3023df9e02e4e3fdbeaf5b74b842063f207971e7fbe7b?s=160',
+		logo: 'https://cdn2.enltlh.me/picture/2025/57bd486ead4f5b34a28aea7f160a70ae.avif',
 		/** 展示标题文本，否则展示纯 Logo */
 		showTitle: true,
 		subtitle: blogConfig.subtitle,
-		emojiTail: ['📄', '🦌', '🙌', '🐟', '🏖️'],
+		emojiTail: ['😝', '😸', '🍂'],
 	},
 
 	/** 左侧栏导航 */
@@ -94,6 +93,7 @@ export default defineAppConfig({
 				{ icon: 'ph:files-bold', text: '文章', url: '/' },
 				{ icon: 'ph:link-bold', text: '友链', url: '/link' },
 				{ icon: 'ph:archive-bold', text: '归档', url: '/archive' },
+				{ icon: 'ph:tag-bold', text: '标签', url: '/tag' },
 			],
 		},
 	] satisfies Nav,

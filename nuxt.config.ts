@@ -185,14 +185,18 @@ ${packageJson.homepage}
 	},
 
 	icon: {
+		// 完全禁用图标集加载，使用纯客户端图标以避免内存溢出
+		collections: [],
 		customCollections: [
-			{ prefix: 'zi', dir: './app/assets/icons' },
+			// { prefix: 'zi', dir: './app/assets/icons' }, // 移除不存在的图标集配置
 		],
 		clientBundle: {
 			scan: {
 				globInclude: ['**\/*.{vue,jsx,tsx,ts,md,mdc,mdx}'],
 			},
 		},
+		// 禁用服务器端图标加载以避免内存溢出
+		serverBundle: false,
 	},
 
 	image: {
