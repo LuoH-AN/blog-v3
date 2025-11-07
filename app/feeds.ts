@@ -503,7 +503,7 @@ export default [
 				feed: 'https://imlonghao.com/feed.xml',
 				icon: 'https://imlonghao.com/favicon.ico',
 				avatar: 'https://imlonghao.com/favicon.ico',
-				archs: ['Python', 'Cloudflare'],
+				archs: ['Golang', 'Cloudflare'],
 				date: '2025-10-31',
 				comment: '网络安全与实践。',
 			},
