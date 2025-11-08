@@ -46,7 +46,6 @@ useEventListener(emblaRef, 'wheel', (e) => {
 					<div class="title text-creative">
 						{{ article.title }}
 					</div>
-					<ZDate v-if="article.date" class="desc" :date="article.date" />
 				</div>
 			</ZRawLink>
 		</div>
@@ -148,28 +147,38 @@ useEventListener(emblaRef, 'wheel', (e) => {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: space-evenly;
+			justify-content: center;
 			position: absolute;
-			opacity: 0;
-			inset: 0;
+			opacity: 1;
+			inset: auto 0 0;
+			height: 33.33%;
 			padding: 1em;
-			backdrop-filter: brightness(0.8) saturate(10) contrast(0.8) blur(2em);
+			background: transparent;
+			backdrop-filter: blur(4px);
+			mask:
+				linear-gradient(
+					to bottom,
+					rgb(0 0 0 / 0%) 0%,
+					rgb(0 0 0 / 80%) 20%,
+					rgb(0 0 0 / 100%) 100%
+				);
 			text-align: center;
 			color: white;
-			transition: opacity 0.2s;
+			transition: all 0.2s;
+			z-index: 2;
 
 			> .title {
+				position: relative;
+				font-family: var(--font-stroke-free, var(--font-creative, sans-serif));
+				font-size: 1em;
+				font-weight: bold;
 				text-wrap: balance;
-			}
-
-			> .desc {
-				opacity: 0.5;
-				font-size: 0.8em;
+				z-index: 3;
 			}
 		}
 
 		&:hover > .info {
-			opacity: 1;
+			backdrop-filter: blur(6px);
 		}
 	}
 }
