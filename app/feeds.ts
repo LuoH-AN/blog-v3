@@ -2,6 +2,7 @@ import type { FeedGroup } from '~/types/feed'
 import { getFavicon, getGhAvatar, getGhIcon, getQqAvatar, QqAvatarSize } from './utils/img'
 
 export default [
+	// #region 相谈甚多
 	{
 		name: '友情链接',
 		desc: '',
