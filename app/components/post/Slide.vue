@@ -155,31 +155,38 @@ useEventListener(carouselEl, 'wheel', (e) => {
 			inset: auto 0 0;
 			height: 33.33%;
 			padding: 1em;
-			background: transparent;
-			backdrop-filter: blur(4px);
-			mask:
-				linear-gradient(
-					to bottom,
-					rgb(0 0 0 / 0%) 0%,
-					rgb(0 0 0 / 80%) 20%,
-					rgb(0 0 0 / 100%) 100%
-				);
 			text-align: center;
 			color: white;
 			transition: all 0.2s;
-			z-index: 2;
+			z-index: 10;
+
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: transparent;
+				backdrop-filter: blur(4px);
+				mask:
+					linear-gradient(
+						to bottom,
+						rgb(0 0 0 / 0%) 0%,
+						rgb(0 0 0 / 50%) 20%,
+						rgb(0 0 0 / 100%) 100%
+					);
+				z-index: -1;
+			}
 
 			> .title {
-				position: relative;
 				font-family: var(--font-stroke-free, var(--font-creative, sans-serif));
 				font-size: 1em;
 				font-weight: bold;
+				text-shadow: 0 1px 3px rgb(0 0 0 / 80%);
 				text-wrap: balance;
-				z-index: 3;
+				z-index: 10;
 			}
 		}
 
-		&:hover > .info {
+		&:hover > .info::before {
 			backdrop-filter: blur(6px);
 		}
 	}
