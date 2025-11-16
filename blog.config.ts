@@ -9,7 +9,7 @@ const basicConfig = {
 		name: '落憾',
 		avatar: 'https://cdn2.enltlh.me/picture/2025/57bd486ead4f5b34a28aea7f160a70ae.avif',
 		email: 'enltlh@gmail.com',
-		homepage: 'https://www.enltlh.me/',
+		homepage: 'https://enltlh.me/',
 	},
 	copyright: {
 		abbr: 'CC BY-NC-SA 4.0',
