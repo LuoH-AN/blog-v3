@@ -13,8 +13,12 @@ const blogLog = [
 <ZWidget card title="更新日志">
 	<div class="timeline">
 		<div v-for="(item, index) in blogLog" :key="index" class="timeline-item">
-			<div class="timeline-caption">{{ item.label }}</div>
-			<div class="timeline-body">{{ item.value }}</div>
+			<div class="timeline-caption">
+				{{ item.label }}
+			</div>
+			<div class="timeline-body">
+				{{ item.value }}
+			</div>
 		</div>
 	</div>
 </ZWidget>
