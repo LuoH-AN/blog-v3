@@ -1,5 +1,5 @@
 import type { FeedGroup } from '~/types/feed'
-import { getFavicon, getGhAvatar, getGhIcon, getQqAvatar, QqAvatarSize } from './utils/img'
+import { getFavicon, getGhAvatar } from './utils/img'
 
 export default [
 	// #region 相谈甚多
