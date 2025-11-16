@@ -11,90 +11,60 @@ const blogLog = [
 
 <template>
 <ZWidget card title="更新日志">
-	<div class="log-timeline-wrapper">
-		<ZDlGroup size="large" :items="blogLog" />
+	<div class="timeline">
+		<div v-for="(item, index) in blogLog" :key="index" class="timeline-item">
+			<div class="timeline-caption">{{ item.label }}</div>
+			<div class="timeline-body">{{ item.value }}</div>
+		</div>
 	</div>
 </ZWidget>
 </template>
 
 <style lang="scss" scoped>
-.log-timeline-wrapper {
-	:deep(.dl-group.large) {
-		--line-color: #C9C9C9;
-		--c-text-2: var(--custom-c-text-2, #374151);
-		--c-text-3: var(--custom-c-text-3, #9CA3AF);
-		--font-monospace: var(--custom-font-monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+.timeline {
+	position: relative;
+	font-size: 0.9em;
 
-		&.dark, .dark & {
-			--line-color: #4B5563;
-			--c-text-2: var(--custom-dark-c-text-2, #D1D5DB);
-			--c-text-3: var(--custom-dark-c-text-3, #9CA3AF);
-		}
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0.5em auto 0;
+		inset-inline-start: 0.5em;
+		width: 0.3em;
+		background-color: var(--c-bg-soft);
+	}
 
+	.timeline-item {
 		position: relative;
-		list-style: none;
+	}
+}
 
-		> dl {
-			display: block;
-			position: relative;
-			margin-bottom: 0.3rem;
-			padding-left: 1.25rem;
+:deep() {
+	.timeline-caption {
+		position: relative;
+		opacity: 0.8;
+		margin-bottom: 0.2em;
+		font-size: 0.9em;
+		padding-inline-start: 1.5em;
 
-			&:last-child {
-				margin-bottom: 0;
-			}
-
-			&::before {
-				content: "";
-				position: absolute;
-				top: 0.5em;
-				left: 0.25rem;
-				width: 0.5rem;
-				height: 0.5rem;
-				border-radius: 50%;
-				background-color: var(--c-text-2);
-				transform: translateY(-50%) translateX(-50%);
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-				z-index: 1;
-			}
-
-			&::after {
-				content: "";
-				position: absolute;
-				top: 0.5em;
-				left: 0.25rem;
-				width: 1px;
-				background-color: var(--line-color);
-				transform: translateX(-50%);
-				z-index: 0;
-			}
-
-			&:not(:last-child)::after {
-				height: calc(100% + 0.8rem);
-			}
-
-			&:last-child::after {
-				bottom: 0.2em;
-			}
+		&::before {
+			content: "";
+			position: absolute;
+			inset-inline-start: 0.3em;
+			width: 0.8em;
+			height: 0.8em;
+			margin-top: 0.5em;
+			border-radius: 1em;
+			background-color: var(--c-text-2);
 		}
+	}
 
-		> dl > dt {
-			display: block;
-			margin-bottom: 0.1rem;
-			font-family: var(--font-monospace);
-			font-size: 0.8em;
-			font-weight: normal;
-			line-height: 1;
-			text-align: left;
-			color: var(--c-text-3);
-		}
-
-		> dl > dd {
-			margin: 0;
-			font-size: 0.875rem;
-			line-height: 1.4;
-			color: var(--c-text-2);
-		}
+	.timeline-body {
+		overflow: hidden;
+		width: fit-content;
+		margin-bottom: 1em;
+		padding: 0 1em;
+		margin-inline-start: 1em;
 	}
 }
 </style>
