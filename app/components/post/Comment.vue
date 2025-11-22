@@ -65,8 +65,10 @@ onMounted(() => {
 		.tk-avatar,
 		a.tk-submit-action-icon.__markdown { display: none; }
 
-		.tk-preview-container { margin-bottom: 0.5rem;
-			margin-left: 0; }
+		.tk-preview-container {
+			margin-bottom: 0.5rem;
+			margin-left: 0;
+		}
 
 		.tk-row.actions {
 			justify-content: flex-end;
@@ -108,8 +110,10 @@ onMounted(() => {
 					background: var(--c-bg);
 
 					&::before,
-					&::after { display: block;
-						animation: fadeInTip 0.3s ease; }
+					&::after {
+						display: block;
+						animation: fadeInTip 0.3s ease;
+					}
 				}
 
 				&::before {
@@ -167,9 +171,11 @@ onMounted(() => {
 		font-size: 0.95rem;
 		line-height: 1.6;
 
-		.tk-owo-emotion { width: auto;
+		.tk-owo-emotion {
+			width: auto;
 			height: 1.4em;
-			vertical-align: text-bottom; }
+			vertical-align: text-bottom;
+		}
 
 		a {
 			margin: 0 -0.1em;
@@ -178,8 +184,10 @@ onMounted(() => {
 			color: var(--c-primary);
 			transition: all 0.2s;
 
-			&:hover { border-radius: 0.3em;
-				background-size: 100% 100%; }
+			&:hover {
+				border-radius: 0.3em;
+				background-size: 100% 100%;
+			}
 		}
 
 		p > code,
@@ -204,8 +212,10 @@ onMounted(() => {
 			pre {
 				margin-top: 0.75rem;
 
-				code { display: block;
-					padding-top: 0.75rem; }
+				code {
+					display: block;
+					padding-top: 0.75rem;
+				}
 			}
 		}
 
@@ -223,7 +233,6 @@ onMounted(() => {
 	.tk-comments-title { margin-bottom: 0; }
 
 	.tk-replies:not(.tk-replies-expand) {
-		mask: linear-gradient(#FFF 50%, transparent);
 		mask: linear-gradient(#FFF 50%, transparent);
 	}
 
@@ -283,19 +292,27 @@ onMounted(() => {
 }
 
 @keyframes fadeInTip {
-	from { opacity: 0;
-		transform: translate(-50%, 10px); }
+	from {
+		opacity: 0;
+		transform: translate(-50%, 10px);
+	}
 
-	to { opacity: 1;
-		transform: translate(-50%); }
+	to {
+		opacity: 1;
+		transform: translate(-50%);
+	}
 }
 
 @keyframes fadeInPanel {
-	from { opacity: 0;
-		transform: translateY(-20px); }
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
 
-	to { opacity: 1;
-		transform: translateY(0); }
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 :deep(#twikoo > :not(.tk-admin-container)) {
