@@ -140,4 +140,5 @@ export default [
 			},
 		],
 	},
+	// #endregion
 ] satisfies FeedGroup[]
