@@ -2,18 +2,21 @@
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
 const searchStore = useSearchStore()
+const show = computed(() => layoutStore.isOpen('sidebar'))
 
 const { word } = storeToRefs(searchStore)
 </script>
 
 <template>
-<Transition>
-	<!-- FIXME: 评估是否能公用 bgmask 减少冗余 -->
-	<div v-if="layoutStore.isOpen('sidebar')" id="z-sidebar-bgmask" @click="layoutStore.toggle('sidebar')" />
-</Transition>
-<!-- 此处不能使用 Transition，因为半宽屏状态始终显示 -->
-<aside id="z-sidebar" :class="{ show: layoutStore.isOpen('sidebar') }">
-	<ZhiluHeader class="sidebar-header" to="/" />
+<BlogMask
+	v-model:show="show"
+	class="mobile-only"
+	@click="layoutStore.toggle('sidebar')"
+/>
+
+<!-- 不能用 Transition 实现弹出收起动画，因为半宽屏状态始终显示 -->
+<aside class="blog-sidebar" :class="{ show }">
+	<BlogHeader class="sidebar-header" to="/" />
 
 	<nav class="sidebar-nav scrollcheck-y">
 		<div class="search-btn sidebar-nav-item gradient-card" @click="layoutStore.toggle('search')">
@@ -29,25 +32,25 @@ const { word } = storeToRefs(searchStore)
 
 			<menu>
 				<li v-for="(item, itemIndex) in group.items" :key="itemIndex">
-					<ZRawLink :to="item.url" class="sidebar-nav-item">
+					<UtilLink :to="item.url" class="sidebar-nav-item">
 						<Icon :name="item.icon" />
 						<span class="nav-text">{{ item.text }}</span>
 						<Icon v-if="isExtLink(item.url)" class="external-tip" name="ph:arrow-up-right" />
-					</ZRawLink>
+					</UtilLink>
 				</li>
 			</menu>
 		</template>
 	</nav>
 
 	<footer class="sidebar-footer">
-		<ThemeToggle />
+		<BlogThemeToggle />
 		<ZIconNavList :list="appConfig.footer.iconNav" />
 	</footer>
 </aside>
 </template>
 
 <style lang="scss" scoped>
-#z-sidebar {
+.blog-sidebar {
 	display: flex;
 	flex-direction: column;
 	color: var(--c-text-2);
@@ -66,29 +69,12 @@ const { word } = storeToRefs(searchStore)
 		color: currentcolor;
 		transform: var(--transform-start-far);
 		transition: transform 0.2s;
-		z-index: 100;
+		z-index: var(--z-index-popover);
 
 		&.show {
 			box-shadow: 0 0 1rem var(--ld-shadow);
 			transform: none;
 		}
-	}
-}
-
-#z-sidebar-bgmask {
-	position: fixed;
-	inset: 0;
-	background-color: #0003;
-	transition: opacity 0.2s;
-	z-index: 100;
-
-	&.v-enter-from,
-	&.v-leave-to {
-		opacity: 0;
-	}
-
-	@media (min-width: $breakpoint-mobile) {
-		display: none;
 	}
 }
 

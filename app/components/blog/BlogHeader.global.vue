@@ -1,43 +1,52 @@
 <script setup lang="ts">
+withDefaults(defineProps<{
+	tag?: string
+}>(), {
+	tag: 'div',
+})
 const appConfig = useAppConfig()
 </script>
 
 <template>
-<ZRawLink class="zhilu-header">
+<UtilLink class="blog-header">
 	<div v-if="appConfig.header.emojiTail" class="emoji-tail">
 		<span
 			v-for="(emoji, emojiIndex) in appConfig.header.emojiTail"
 			:key="emojiIndex"
 			class="split-char"
-			:style="{ '--delay': `${emojiIndex * .6 - 3}s` }"
+			:style="{ '--delay': `${(emojiIndex * .6 - 3).toFixed(1)}s` }"
 			v-text="emoji"
 		/>
 	</div>
+
 	<NuxtImg
 		:src="appConfig.header.logo"
-		class="zhilu-logo"
+		class="blog-logo"
 		:class="{ circle: appConfig.header.showTitle }"
 		:alt="appConfig.title"
 	/>
-	<div v-if="appConfig.header.showTitle" class="zhilu-text">
-		<div class="header-title">
+
+	<div v-if="appConfig.header.showTitle" class="blog-text">
+		<component :is="tag" class="header-title">
 			<span
 				v-for="(char, charIndex) in appConfig.title"
 				:key="charIndex"
 				class="split-char"
-				:style="{ '--delay': `${(charIndex + 1) * .1}s` }"
+				:style="{ '--delay': `${((charIndex + 1) * .1).toFixed(1)}s` }"
 				v-text="char"
 			/>
-		</div>
+		</component>
+
 		<div class="header-subtitle">
 			{{ appConfig.header.subtitle }}
 		</div>
 	</div>
-</ZRawLink>
+</UtilLink>
 </template>
 
 <style lang="scss" scoped>
-.zhilu-header {
+.blog-header {
+	contain: layout;
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
@@ -48,7 +57,7 @@ const appConfig = useAppConfig()
 	user-select: none;
 }
 
-.zhilu-logo {
+.blog-logo {
 	height: 3em;
 
 	&.circle {
@@ -113,7 +122,7 @@ const appConfig = useAppConfig()
 	}
 }
 
-.zhilu-header:hover {
+.blog-header:hover {
 	.emoji-tail {
 		opacity: 0.5;
 	}

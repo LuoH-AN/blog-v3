@@ -11,7 +11,7 @@ const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-tech'])
 
 const { data: listRaw } = await useArticleIndex()
-const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
+const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw, { bindDirectionQuery: 'asc', bindOrderQuery: 'sort' })
 const { category, categories, listCategorized } = useCategory(listSorted, { bindQuery: 'category' })
 const { page, totalPages, listPaged } = usePagination(listCategorized, { bindQuery: 'page' })
 
@@ -31,42 +31,44 @@ const listRecommended = computed(() => sort(
 <template>
 <div class="mobile-only">
 	<!-- 若不包裹，display: none 在 JS 加载后才有足够优先级 -->
-	<ZhiluHeader to="/" />
+	<BlogHeader to="/" tag="h1" />
 </div>
 
-<PostSlide v-if="listRecommended.length && page === 1 && !category" :list="listRecommended" />
+<UtilHydrateSafe>
+	<PostSlide v-if="listRecommended.length && page === 1 && !category" :list="listRecommended" />
 
-<div class="post-list">
-	<div class="toolbar">
-		<div>
-			<!-- 外层元素用于占位 -->
-			<ZRawLink to="/preview" class="preview-entrance">
-				<Icon name="ph:file-lock-bold" />
-				查看预览文章
-			</ZRawLink>
+	<div class="post-list">
+		<div class="toolbar">
+			<div>
+				<!-- 外层元素用于占位 -->
+				<UtilLink to="/preview" class="preview-entrance">
+					<Icon name="ph:file-lock-bold" />
+					查看预览文章
+				</UtilLink>
+			</div>
+
+			<PostOrderToggle
+				v-model:is-ascending="isAscending"
+				v-model:sort-order="sortOrder"
+				v-model:category="category"
+				:categories
+			/>
 		</div>
 
-		<ZOrderToggle
-			v-model:is-ascending="isAscending"
-			v-model:sort-order="sortOrder"
-			v-model:category="category"
-			:categories
-		/>
+		<TransitionGroup tag="menu" class="proper-height" name="float-in">
+			<PostArticle
+				v-for="article, index in listPaged"
+				:key="article.path"
+				v-bind="article"
+				:to="article.path"
+				:use-updated="sortOrder === 'updated'"
+				:style="{ '--delay': `${index * 0.05}s` }"
+			/>
+		</TransitionGroup>
+
+		<ZPagination v-model="page" sticky :total-pages="totalPages" />
 	</div>
-
-	<TransitionGroup tag="menu" class="proper-height" name="float-in">
-		<ZArticle
-			v-for="article, index in listPaged"
-			:key="article.path"
-			v-bind="article"
-			:to="article.path"
-			:use-updated="sortOrder === 'updated'"
-			:style="{ '--delay': `${index * 0.05}s` }"
-		/>
-	</TransitionGroup>
-
-	<ZPagination v-model="page" sticky :total-pages="totalPages" />
-</div>
+</UtilHydrateSafe>
 </template>
 
 <style lang="scss" scoped>
@@ -82,7 +84,8 @@ const listRecommended = computed(() => sort(
 	transition: all 0.2s 1s, color 0.2s;
 	z-index: -1;
 
-	:hover > & {
+	:hover > &,
+	:focus-within > & {
 		opacity: 1;
 		color: var(--c-primary);
 		z-index: 0;
