@@ -1,20 +1,21 @@
 <script setup lang="ts">
 const layoutStore = useLayoutStore()
-const { asideWidgets, translate } = storeToRefs(layoutStore)
+const { asideWidgets, isAnyOpen, translate } = storeToRefs(layoutStore)
 
 const panelTranslateStyle = computed(() => ({
 	transform: Object.values(translate.value).map(v => v ? `translate(${v})` : '').join(' '),
 }))
 
-useEventListener('keydown', (event) => {
-	if (event.key === 'Escape') {
+useEventListener('keydown', (e) => {
+	if (isAnyOpen.value && e.key === 'Escape') {
+		e.preventDefault()
 		layoutStore.closeAll()
 	}
 })
 </script>
 
 <template>
-<div class="blog-panel" :class="{ 'has-active': layoutStore.isAnyOpen }" :style="panelTranslateStyle">
+<div id="blog-panel" :class="{ 'has-active': layoutStore.isAnyOpen }" :style="panelTranslateStyle">
 	<button
 		class="toggle-sidebar mobile-only"
 		:class="{ active: layoutStore.isOpen('sidebar') }"
@@ -37,7 +38,7 @@ useEventListener('keydown', (event) => {
 </template>
 
 <style lang="scss" scoped>
-.blog-panel {
+#blog-panel {
 	position: fixed;
 	overflow: hidden;
 	overflow: clip;

@@ -34,137 +34,24 @@ onMounted(() => {
 	}
 }
 
-.comment-loading {
-	padding: 2rem;
-	text-align: center;
-	color: var(--c-text-2);
+:deep(#twikoo) {
+	margin: 2em 0;
 
-	.loading-spinner {
-		width: 40px;
-		height: 40px;
-		margin: 0 auto 1rem;
-		border: 3px solid var(--c-bg-3);
-		border-top-color: var(--c-primary);
-		border-radius: 50%;
-		animation: spin 1s linear infinite;
+	.tk-admin-container {
+		position: fixed;
+		z-index: calc(var(--z-index-popover) + 1);
 	}
 
-	p { font-size: 0.9rem; }
-}
-
-:deep(#twikoo > :not(.tk-admin-container)) {
-	.tk-avatar {
-		overflow: hidden;
-		border-radius: 50% !important;
+	.tk-input {
+		font-family: var(--font-monospace);
 	}
 
-	.tk-submit {
-		display: flex;
-		flex-direction: column;
-
-		.tk-avatar,
-		a.tk-submit-action-icon.__markdown { display: none; }
-
-		.tk-preview-container {
-			margin-bottom: 0.5rem;
-			margin-left: 0;
-		}
-
-		.tk-row.actions {
-			justify-content: flex-end;
-			order: 3;
-			margin: 0 0 0.5rem;
-		}
-
-		.tk-input {
-			order: 1;
-			margin-bottom: 0.5rem;
-
-			.el-textarea__inner {
-				padding: 0.8rem;
-				border: 2px solid var(--c-border);
-				border-radius: 12px;
-				background-color: var(--c-bg-2);
-				transition: all 0.2s;
-
-				&:focus {
-					border-color: var(--c-primary);
-					background-color: var(--c-bg);
-					background-position-y: 350px;
-				}
-			}
-		}
-
-		.tk-meta-input {
-			order: 2;
-			position: relative;
-
-			.el-input-group {
-				border: 2px solid var(--c-border);
-				border-radius: 10px;
-				background: var(--c-bg-2);
-				transition: all 0.2s;
-
-				&:focus-within {
-					border-color: var(--c-primary);
-					background: var(--c-bg);
-
-					&::before,
-					&::after {
-						display: block;
-						animation: fadeInTip 0.3s ease;
-					}
-				}
-
-				&::before {
-					display: none;
-					position: absolute;
-					top: -60px;
-					left: 50%;
-					padding: 0.8rem 1rem;
-					border: 1px solid var(--c-border);
-					border-radius: 8px;
-					background: var(--c-bg);
-					font-size: 0.9rem;
-					white-space: nowrap;
-					color: var(--c-text-1);
-					transform: translate(-50%);
-					z-index: 100;
-				}
-
-				&::after {
-					content: "";
-					display: none;
-					position: absolute;
-					top: -12px;
-					left: 50%;
-					border: 8px solid transparent;
-					border-top: 8px solid var(--c-bg);
-					transform: translate(-50%);
-				}
-			}
-
-			.el-input-group:first-child::before { content: "输入QQ号会自动获取昵称和头像🐧"; }
-			.el-input-group:nth-child(2)::before { content: "收到回复将会发送到您的邮箱📧"; }
-			.el-input-group:nth-child(3)::before { content: "可以通过昵称访问您的网站🔗"; }
-
-			.el-input__inner { border: none !important; }
-
-			.el-input-group__prepend {
-				border: none;
-				border-radius: 8px 0 0 8px;
-				background: var(--c-bg-1);
-				color: var(--c-text-2);
-				transition: all 0.2s;
-			}
-		}
+	.tk-time {
+		color: var(--c-text-3);
 	}
 
-	.OwO .OwO-body {
-		border-radius: 8px;
-		background: var(--c-bg);
-		transform: translateZ(0);
-		animation: fadeInPanel 0.3s ease 0.1s 1 normal both;
+	.tk-main {
+		margin-top: -0.1rem;
 	}
 
 	.tk-content {

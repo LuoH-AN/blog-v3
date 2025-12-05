@@ -11,7 +11,7 @@ const birthYear = appConfig.component.stats.birthYear
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-log'])
 
-const { data: listRaw } = await useArticleIndex()
+const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndexOptions(), { default: () => [] })
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
 const { category, categories, listCategorized } = useCategory(listSorted)
 
@@ -70,7 +70,7 @@ const yearlyWordCount = computed(() => {
 				v-bind="article"
 				:to="article.path"
 				:use-updated="sortOrder === 'updated'"
-				:style="{ '--delay': `${index * 0.03}s` }"
+				:style="getFixedDelay(index * 0.03)"
 			/>
 		</TransitionGroup>
 	</section>

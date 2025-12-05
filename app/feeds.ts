@@ -1,13 +1,16 @@
-import type { FeedGroup } from '~/types/feed'
-import { getFavicon, getGhAvatar } from './utils/img'
+// 友链检测 CLI 需要使用显式导入和相对路径
+import type { FeedGroup } from '../app/types/feed'
+import { myFeed } from '../blog.config'
+import { getFavicon, getGhAvatar, getGhIcon, getQqAvatar, QqAvatarSize } from './utils/img'
 
 export default [
-	// #region 相谈甚多
+	// #region Clarity
 	{
 		name: '友情链接',
 		desc: '',
 		// @keep-sorted { "keys": ["date"] }
 		entries: [
+			myFeed,
 			{
 				author: '梦爱吃鱼',
 				sitenick: '',

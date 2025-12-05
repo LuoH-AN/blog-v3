@@ -104,7 +104,7 @@ button, input, textarea {
 
 // 图片加载失败 fallback
 img {
-	contain: layout; // 限制溢出
+	contain: paint;
 	display: inline-block;
 
 	&::before {
