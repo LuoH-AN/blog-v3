@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type ArticleProps from '~/types/article'
-import { sort } from 'radash'
 
 const appConfig = useAppConfig()
 useSeoMeta({
@@ -11,13 +10,18 @@ useSeoMeta({
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-tech'])
 
-const { data: listRaw } = await useAsyncData<ArticleProps[]>('tags-articles', () =>
-	useArticleIndex().then(data => data.data.value))
+const { data: listRaw } = await useAsyncData('tags-articles', () =>
+	queryCollection('content')
+		.where('stem', 'LIKE', 'posts/%')
+		.select('categories', 'date', 'description', 'image', 'path', 'readingTime', 'recommend', 'title', 'type', 'updated', 'tags')
+		.all(), { default: () => [] })
+const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
+const category = ref<string | undefined>()
+const categories = ref<string[]>([])
 
 const articlesByTag = computed(() => {
 	const result: Record<string, ArticleProps[]> = {}
-	const articles = sort(listRaw.value || [], a => new Date(a.date || 0).getTime(), true)
-	for (const article of articles) {
+	for (const article of listSorted.value) {
 		if (article.tags) {
 			for (const tag of article.tags) {
 				if (!result[tag]) {
@@ -41,6 +45,13 @@ const sortedTags = computed(() => {
 
 <template>
 <div class="tag proper-height">
+	<PostOrderToggle
+		v-model:is-ascending="isAscending"
+		v-model:sort-order="sortOrder"
+		v-model:category="category"
+		:categories
+	/>
+
 	<section
 		v-for="tag in sortedTags"
 		:key="tag"
@@ -57,12 +68,13 @@ const sortedTags = computed(() => {
 		</div>
 
 		<TransitionGroup tag="menu" class="tag-list" name="float-in">
-			<ZArchive
+			<PostArchive
 				v-for="article, index in articlesByTag[tag]"
 				:key="article.path"
 				v-bind="article"
 				:to="article.path"
-				:style="{ '--delay': `${index * 0.03}s` }"
+				:use-updated="sortOrder === 'updated'"
+				:style="getFixedDelay(index * 0.03)"
 			/>
 		</TransitionGroup>
 	</section>
