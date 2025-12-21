@@ -48,7 +48,7 @@ useEventListener(carouselEl, 'wheel', (e) => {
 					<div class="title text-creative">
 						{{ article.title }}
 					</div>
-					<ZDate v-if="article.date" class="desc" :date="article.date" />
+					<UtilDate v-if="article.date" class="desc" :date="article.date" />
 				</div>
 			</UtilLink>
 		</div>
