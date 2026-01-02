@@ -1,5 +1,46 @@
-<script setup lang="ts">
+<script setup lang="tsx">
+import type { TippyComponent } from 'vue-tippy'
+
 const appConfig = useAppConfig()
+
+const commentEl = useTemplateRef('comment')
+const popoverEl = useTemplateRef<TippyComponent>('popover')
+const popoverJumpTo = ref('')
+
+const popoverBind = ref<TippyComponent['$props']>({})
+
+useEventListener(commentEl, 'click', (e) => {
+	if (!(e.target instanceof HTMLElement))
+		return
+
+	if (e.target.classList.contains('tk-avatar-img')) {
+		e.stopPropagation()
+		return
+	}
+
+	const popoverTarget = e.target instanceof HTMLAnchorElement
+		? e.target
+		: e.target.parentElement instanceof HTMLAnchorElement
+			? e.target.parentElement
+			: null
+
+	if (popoverTarget?.target === '_blank') {
+		popoverEl.value?.hide()
+
+		popoverJumpTo.value = popoverTarget.href
+		popoverBind.value = {
+			getReferenceClientRect: () => popoverTarget.getBoundingClientRect(),
+			triggerTarget: popoverTarget,
+		}
+
+		popoverEl.value?.show()
+		e.preventDefault()
+	}
+}, { capture: true })
+
+function confirmOpen(url: string) {
+	window.open(url, '_blank')
+}
 
 onMounted(() => {
 	window.twikoo?.init?.({
@@ -10,10 +51,31 @@ onMounted(() => {
 </script>
 
 <template>
-<section class="z-comment">
+<section ref="comment" class="z-comment">
 	<h3 class="text-creative">
 		评论区
 	</h3>
+
+	<!-- interactive 默认会把气泡移动到 triggerTarget 的父元素上 -->
+	<Tooltip
+		ref="popover"
+		v-bind="popoverBind"
+		:append-to="() => commentEl"
+		interactive
+		trigger="focusin"
+	>
+		<template #content>
+			<div class="popover-confirm">
+				{{ safelyDecodeUriComponent(popoverJumpTo) }}
+				<ZButton
+					primary
+					text="访问"
+					@click="confirmOpen(popoverJumpTo)"
+				/>
+			</div>
+		</template>
+	</Tooltip>
+
 	<div id="twikoo">
 		<div class="comment-loading">
 			<div class="loading-spinner" />
@@ -33,6 +95,19 @@ onMounted(() => {
 	}
 }
 
+.popover-confirm {
+	display: flex;
+	align-items: center;
+	overflow-wrap: anywhere;
+
+	> .button {
+		align-self: stretch;
+		margin: -0.3em -0.6em;
+		border-radius: 0 0.5em 0.5em 0;
+		margin-inline-start: 0.5em;
+	}
+}
+
 :deep(#twikoo) {
 	margin: 2em 0;
 
@@ -45,10 +120,15 @@ onMounted(() => {
 		font-family: var(--font-monospace);
 	}
 
-	@supports (corner-shape: squircle) {
-		.tk-avatar {
-			border-radius: 50%;
+	.tk-avatar {
+		border-radius: 50%;
+
+		@supports (corner-shape: squircle) {
 			corner-shape: superellipse(1.2);
+		}
+
+		&.tk-clickable {
+			cursor: auto;
 		}
 	}
 
@@ -95,6 +175,17 @@ onMounted(() => {
 
 	.tk-replies:not(.tk-replies-expand) {
 		mask-image: linear-gradient(#FFF 50%, transparent);
+	}
+
+	.tk-expand {
+		border-radius: 0.5rem;
+		transition: background-color 0.1s;
+	}
+
+	.tippy-svg-arrow > svg {
+		fill: inherit;
+		width: auto;
+		height: auto;
 	}
 }
 

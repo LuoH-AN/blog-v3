@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 		head: {
 			meta: [
 				{ name: 'author', content: [blogConfig.author.name, blogConfig.author.email].filter(Boolean).join(', ') },
+				{ name: 'color-scheme', content: 'light dark' },
 				// 此处为元数据的生成器标识，不建议修改
 				{ 'name': 'generator', 'content': `${pascal(packageJson.name)} ${packageJson.version}`, 'data-github-repo': packageJson.homepage },
 				{ name: 'mobile-web-app-capable', content: 'yes' },
@@ -36,7 +37,7 @@ export default defineNuxtConfig({
 			script: blogConfig.scripts,
 		},
 		rootAttrs: {
-			id: 'z-root',
+			id: 'blog-root',
 		},
 	},
 
@@ -154,6 +155,7 @@ export default defineNuxtConfig({
 				// @keep-sorted
 				rehypePlugins: {
 					'rehype-katex': {},
+					'rehype-meta-slots': {},
 				},
 				toc: { depth: 4, searchDepth: 4 },
 			},
