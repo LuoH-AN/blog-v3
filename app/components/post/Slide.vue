@@ -6,6 +6,9 @@ import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 
 defineProps<{ list: ArticleProps[] }>()
 
+const appConfig = useAppConfig()
+const compConf = computed(() => appConfig.component.slide)
+
 // @keep-sorted
 const [carouselEl, carouselApi] = emblaCarouselVue({
 	containScroll: false,
@@ -43,8 +46,13 @@ useEventListener(carouselEl, 'wheel', (e) => {
 				:title="article.description"
 				:to="article.path"
 			>
-				<NuxtImg class="cover" :src="article.image" :alt="article.title" />
-				<div class="info">
+				<NuxtImg class="cover" :src="article.image" :alt="compConf.showTitle ? '' : article.title" />
+
+				<div v-if="compConf.showTitle" class="stable-info text-creative">
+					{{ article.title }}
+				</div>
+
+				<div class="hover-info">
 					<div class="title text-creative">
 						{{ article.title }}
 					</div>
@@ -88,7 +96,6 @@ useEventListener(carouselEl, 'wheel', (e) => {
 	align-items: center;
 	justify-content: space-between;
 	gap: 2rem;
-	overflow: hidden;
 	height: 3rem;
 	margin-bottom: -0.2rem;
 	mask-image: linear-gradient(#FFF, transparent);
@@ -123,21 +130,17 @@ useEventListener(carouselEl, 'wheel', (e) => {
 	&.next { inset-inline-end: 1rem; }
 }
 
-.slide-list {
-	display: flex;
-	scroll-snap-type: x mandatory;
-
-	> .slide-item {
-		flex-shrink: 0;
-		position: relative;
-		overflow: hidden;
-		width: max(12rem, 28%);
-		max-width: 80%;
-		aspect-ratio: 1.77;
-		margin: 0 min(0.5em, 1%);
-		border-radius: 0.5rem;
-		scroll-snap-align: center;
-		scroll-snap-stop: always;
+.slide-item {
+	contain: paint;
+	flex-shrink: 0;
+	position: relative;
+	width: max(12rem, 28%);
+	max-width: 80%;
+	aspect-ratio: 1.77;
+	margin: 0 min(0.5em, 1%);
+	border-radius: 0.5rem;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
 
 		> .cover {
 			display: block;
@@ -186,8 +189,14 @@ useEventListener(carouselEl, 'wheel', (e) => {
 				z-index: 10;
 			}
 		}
+	}
 
-		&:hover > .info {
+	&:hover, &:focus-within {
+		>.stable-info {
+			opacity: 0;
+		}
+
+		> .hover-info {
 			opacity: 1;
 		}
 	}
