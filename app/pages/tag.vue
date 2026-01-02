@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type ArticleProps from '~/types/article'
+import { getFixedDelay } from '~/utils/anim'
 
 const appConfig = useAppConfig()
 useSeoMeta({
@@ -16,8 +17,6 @@ const { data: listRaw } = await useAsyncData('tags-articles', () =>
 		.select('categories', 'date', 'description', 'image', 'path', 'readingTime', 'recommend', 'title', 'type', 'updated', 'tags')
 		.all(), { default: () => [] })
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
-const category = ref<string | undefined>()
-const categories = ref<string[]>([])
 
 const articlesByTag = computed(() => {
 	const result: Record<string, ArticleProps[]> = {}
@@ -41,6 +40,9 @@ const sortedTags = computed(() => {
 		return bCount - aCount
 	})
 })
+
+const tag = ref<string | undefined>()
+const tags = computed(() => sortedTags.value)
 </script>
 
 <template>
@@ -48,28 +50,30 @@ const sortedTags = computed(() => {
 	<PostOrderToggle
 		v-model:is-ascending="isAscending"
 		v-model:sort-order="sortOrder"
-		v-model:category="category"
-		:categories
+		v-model:category="tag"
+		:categories="tags"
+		enable-ascending
 	/>
 
 	<section
-		v-for="tag in sortedTags"
-		:key="tag"
+		v-for="currentTag in sortedTags"
+		v-show="!tag || tag === currentTag"
+		:key="currentTag"
 		class="tag-group"
 	>
 		<div class="tag-title">
 			<h2 class="tag-name">
-				{{ tag }}
+				{{ currentTag }}
 			</h2>
 
 			<div class="tag-info">
-				<span>{{ articlesByTag[tag]?.length }}篇</span>
+				<span>{{ articlesByTag[currentTag]?.length }}篇</span>
 			</div>
 		</div>
 
 		<TransitionGroup tag="menu" class="tag-list" name="float-in">
 			<PostArchive
-				v-for="article, index in articlesByTag[tag]"
+				v-for="article, index in articlesByTag[currentTag]"
 				:key="article.path"
 				v-bind="article"
 				:to="article.path"
