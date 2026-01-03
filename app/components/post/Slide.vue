@@ -37,6 +37,7 @@ useEventListener(carouselEl, 'wheel', (e) => {
 			按住 Shift 横向滚动
 		</div>
 	</div>
+
 	<div ref="carouselEl" class="z-slide-body" dir="ltr">
 		<div class="slide-list">
 			<UtilLink
@@ -56,15 +57,18 @@ useEventListener(carouselEl, 'wheel', (e) => {
 					<div class="title text-creative">
 						{{ article.title }}
 					</div>
+					<UtilDate v-if="article.date" class="desc" :date="article.date" />
 				</div>
 			</UtilLink>
 		</div>
+
 		<ZButton
 			class="carousel-action prev at-slide-hover"
 			aria-label="上一页"
 			icon="ph:caret-left-bold"
 			@click="carouselApi?.scrollPrev()"
 		/>
+
 		<ZButton
 			class="carousel-action next at-slide-hover"
 			aria-label="下一页"
@@ -79,15 +83,15 @@ useEventListener(carouselEl, 'wheel', (e) => {
 .z-slide {
 	margin: 1rem;
 
+	.at-slide-hover {
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
 	&:hover .at-slide-hover,
 	&:focus-within .at-slide-hover {
 		opacity: 1;
 	}
-}
-
-.at-slide-hover {
-	opacity: 0;
-	transition: opacity 0.2s;
 }
 
 .z-slide-header {
@@ -116,6 +120,11 @@ useEventListener(carouselEl, 'wheel', (e) => {
 	mask-image: linear-gradient(to var(--end), transparent, #FFF var(--fadeout-width), #FFF calc(100% - var(--fadeout-width)), transparent);
 	cursor: grab;
 	user-select: none;
+
+	.slide-list {
+		display: flex;
+		scroll-snap-type: x mandatory;
+	}
 }
 
 .carousel-action {
@@ -142,52 +151,47 @@ useEventListener(carouselEl, 'wheel', (e) => {
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
 
-		> .cover {
-			display: block;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+	> .cover {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	>.stable-info, > .hover-info {
+		position: absolute;
+		text-align: center;
+		color: white;
+		transition: opacity 0.2s;
+	}
+
+	> .stable-info {
+		overflow: hidden;
+		bottom: 0;
+		width: 100%;
+		padding: 0.5em;
+		background-image: linear-gradient(transparent, #0003, #0005);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-shadow: 0 1px 1px #0003, 0 1px 2px #0003;
+	}
+
+	> .hover-info {
+		display: grid;
+		place-items: center;
+		opacity: 0;
+		inset: 0;
+		padding: 1em;
+		backdrop-filter: brightness(0.8) saturate(10) contrast(0.8) blur(2em);
+		text-shadow: 0 1px 2px var(--ld-shadow);
+
+		> .title {
+			text-wrap: balance;
 		}
 
-		> .info {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			position: absolute;
-			opacity: 1;
-			inset: auto 0 0;
-			height: 33.33%;
-			padding: 1em;
-			text-align: center;
-			color: white;
-			transition: all 0.2s;
-			z-index: 10;
-
-			&::before {
-				content: "";
-				position: absolute;
-				inset: 0;
-				background: transparent;
-				backdrop-filter: blur(4px);
-				mask:
-					linear-gradient(
-						to bottom,
-						rgb(0 0 0 / 0%) 0%,
-						rgb(0 0 0 / 50%) 20%,
-						rgb(0 0 0 / 100%) 100%
-					);
-				z-index: -1;
-			}
-
-			> .title {
-				font-family: var(--font-stroke-free, var(--font-creative, sans-serif));
-				font-size: 1em;
-				font-weight: bold;
-				text-shadow: 0 1px 3px rgb(0 0 0 / 80%);
-				text-wrap: balance;
-				z-index: 10;
-			}
+		> .desc {
+			opacity: 0.5;
+			font-size: 0.8em;
 		}
 	}
 
