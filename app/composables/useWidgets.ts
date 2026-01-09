@@ -6,6 +6,7 @@ import {
 	LazyWidgetBlogTech,
 	LazyWidgetCommGroup,
 	LazyWidgetEmpty,
+	LazyWidgetPoetry,
 	LazyWidgetToc,
 } from '#components'
 import { pascal } from 'radash'
@@ -17,6 +18,7 @@ const rawWidgets = {
 	LazyWidgetBlogTech,
 	LazyWidgetCommGroup,
 	LazyWidgetEmpty,
+	LazyWidgetPoetry,
 	LazyWidgetToc,
 }
 
