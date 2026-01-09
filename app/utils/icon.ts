@@ -16,7 +16,7 @@ const archIcons = {
 	'Netlify': 'simple-icons:netlify',
 	'Next.js': 'simple-icons:nextdotjs',
 	'NotionNext': 'simple-icons:notion',
-	'Nuxt': 'simple-icons:nuxtdotjs',
+	'Nuxt': 'simple-icons:nuxt',
 	'PHP': 'simple-icons:php',
 	'Python': 'simple-icons:python',
 	'React': 'simple-icons:react',
@@ -27,11 +27,10 @@ const archIcons = {
 	'Vue': 'uim:vuejs',
 	'VuePress': 'uim:vuejs',
 	'WordPress': 'simple-icons:wordpress',
-	'Zebaur': 'tabler:square-letter-z-filled',
+	'Zeabur': 'tabler:square-letter-z-filled', // 不准确
 	'国内 CDN': 'ph:cloud-check-fill',
 	'服务器': 'ph:hard-drives-fill',
 	'虚拟主机': 'ph:file-cloud-bold',
-	// 不准确
 }
 
 export type Arch = keyof typeof archIcons

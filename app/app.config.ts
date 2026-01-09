@@ -84,9 +84,9 @@ export default defineAppConfig({
 			{
 				title: '信息',
 				items: [
-					{ icon: 'simple-icons:nuxtdotjs', text: `主题: Clarity ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
-					{ icon: 'ph:certificate-bold', text: '萌ICP备20250355号', url: 'https://icp.gov.moe/?keyword=20250355' },
-					{ icon: 'ph:certificate-bold', text: '雾ICP备20110419号', url: 'https://icp.wudu.ltd/id.php?keyword=20110419' },
+					{ icon: 'simple-icons:nuxt', text: `主题: Clarity ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
+					{ icon: 'ph:swatches-bold', text: '主题和组件文档', url: '/theme' },
+					{ icon: 'ph:certificate-bold', text: '陕ICP备2025082251号', url: 'https://beian.miit.gov.cn/' },
 				],
 			},
 		] satisfies Nav,
