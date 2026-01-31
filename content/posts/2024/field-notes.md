@@ -2,7 +2,7 @@
 title: 田记
 description: 天色湛蓝，田间翠绿，却是告别。
 image: https://cdn2.elh.dpdns.org/picture/2025/a76969f4eeb9edbeecffe50df9c2b0bf.avif
-date: 2024-08-20
+date: 2025-04-30
 categories: [诗词]
 tags: [写作, 杂记]
 ---
