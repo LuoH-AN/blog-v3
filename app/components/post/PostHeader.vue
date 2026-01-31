@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type ArticleProps from '~/types/article'
+import type { ArticleProps } from '~/types/article'
 
 defineOptions({ inheritAttrs: false })
 const props = defineProps<ArticleProps>()
@@ -18,7 +18,6 @@ const { copy, copied } = useCopy(shareText)
 </script>
 
 <template>
-<!-- 💩夸克浏览器，桌面端只有IE不支持 :has() 了 -->
 <div class="post-header" :class="{ 'has-cover': image }">
 	<Pic v-if="image" class="post-cover" :src="image" :alt="title" :filter="coverFilter" />
 	<div class="post-nav">
@@ -68,6 +67,7 @@ const { copy, copied } = useCopy(shareText)
 
 <style lang="scss" scoped>
 .post-header {
+	contain: paint; // overflow hidden + position relative
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -88,7 +88,6 @@ const { copy, copied } = useCopy(shareText)
 	}
 
 	&.has-cover {
-		contain: paint; // overflow hidden + position relative
 		min-height: 16rem;
 		max-height: 20rem;
 		color: white;
@@ -100,7 +99,7 @@ const { copy, copied } = useCopy(shareText)
 
 		.post-title {
 			background-image: linear-gradient(transparent, #0003, #0005);
-			text-shadow: var(--text-black-shadow);
+			text-shadow: var(--text-shadow-black);
 
 			&.text-story {
 				text-align: center;

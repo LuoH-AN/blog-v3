@@ -33,7 +33,7 @@ function getInspectStyle(src: string): CSSProperties {
 </script>
 
 <template>
-<Tooltip :delay="200" interactive hide-on-click="toggle">
+<Tooltip :delay="200" interactive ^role="link" hide-on-click="toggle">
 	<UtilLink
 		class="feed-card gradient-card"
 		:to="error ? undefined : link"
@@ -120,7 +120,7 @@ function getInspectStyle(src: string): CSSProperties {
 			width: 2.5rem;
 			height: 2.5rem;
 			border-radius: 50%;
-			box-shadow: 2px 4px 0.5em var(--ld-shadow);
+			box-shadow: var(--box-shadow-2);
 			background-color: var(--ld-bg-card);
 			object-fit: cover;
 		}

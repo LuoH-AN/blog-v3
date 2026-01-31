@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type ArticleProps from '~/types/article'
+import type { ArticleProps } from '~/types/article'
 import Autoplay from 'embla-carousel-autoplay'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
@@ -166,7 +166,7 @@ useEventListener(carouselEl, 'wheel', (e) => {
 	>.stable-info, > .hover-info {
 		position: absolute;
 		text-align: center;
-		text-shadow: var(--text-black-shadow);
+		text-shadow: var(--text-shadow-black);
 		color: white;
 		transition: opacity 0.2s;
 	}
