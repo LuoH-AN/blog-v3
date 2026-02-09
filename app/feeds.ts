@@ -1,7 +1,7 @@
 // 友链检测 CLI 需要使用显式导入和相对路径
 import type { FeedGroup } from '../app/types/feed'
 import { myFeed } from '../blog.config'
-import { getFavicon, getGhAvatar, getGhIcon, getQqAvatar, QqAvatarSize } from './utils/img'
+import { getFavicon, getGhAvatar, getGhIcon, getOicqAvatar, OicqAvatarSize } from './utils/img'
 
 export default [
 	// #region Clarity
