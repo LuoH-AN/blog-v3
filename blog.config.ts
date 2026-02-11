@@ -18,9 +18,9 @@ const basicConfig = {
 	},
 	favicon: 'https://cdn2.elh.dpdns.org/picture/2025/5223b2101b56608abd83b63642984b1f.avif',
 	language: 'zh-CN',
-	timeEstablished: '2019-07-19',
+	timeEstablished: '2024-04-19',
 	timeZone: 'Asia/Shanghai',
-	url: 'https://blog.zhilu.site/',
+	url: 'https://blog.luoh.org/',
 	defaultCategory: '未分类',
 }
 

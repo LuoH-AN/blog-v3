@@ -1,7 +1,8 @@
 import type { Nav, NavItem } from '~/types/nav'
+import { pascal } from 'radash'
 import { Temporal } from 'temporal-polyfill'
 import blogConfig from '~~/blog.config'
-import { version } from '~~/package.json'
+import { name, version } from '~~/package.json'
 
 // 图标查询：https://yesicon.app/ph?s=bold
 // 图标插件：https://marketplace.visualstudio.com/items?itemName=antfu.iconify
@@ -14,7 +15,7 @@ export default defineAppConfig({
 	component: {
 		alert: {
 			/** 默认使用卡片风格还是扁平风格 */
-			defaultStyle: 'card' as 'card' | 'flat',
+			defaultStyle: 'flat' as 'card' | 'flat',
 		},
 
 		codeblock: {
@@ -81,7 +82,7 @@ export default defineAppConfig({
 			{
 				title: '信息',
 				items: [
-					{ icon: 'simple-icons:nuxt', text: `主题: Clarity ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
+					{ icon: 'simple-icons:nuxt', text: `主题: ${pascal(name)} ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
 					{ icon: 'ph:certificate-bold', text: '萌ICP备20250355号', url: 'https://icp.gov.moe/?keyword=20250355' },
 				],
 			},
@@ -114,7 +115,7 @@ export default defineAppConfig({
 				{ icon: 'ph:link-bold', text: '友链', url: '/link' },
 				{ icon: 'ph:archive-bold', text: '归档', url: '/archive' },
 				{ icon: 'ph:tag-bold', text: '标签', url: '/tag' },
-				{ icon: 'ph:notebook-bold', text: 'Memo', url: 'https://memo.luoh.org' },
+				{ icon: 'ph:notebook-bold', text: '说说', url: 'https://memo.luoh.org' },
 			],
 		},
 	] satisfies Nav,
