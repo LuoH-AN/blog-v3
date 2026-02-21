@@ -1,5 +1,5 @@
 ---
-title: 幻仙-仙凡论
+title: 幻仙 - 仙凡论
 description: 仙人，凡人，注定天人永隔吗？
 image: https://cdn2.elh.dpdns.org/picture/2025/3e4fef1869d1f5a5dab6c8058b974315.avif
 date: 2025-06-19
@@ -9,9 +9,8 @@ tags: [写作, 幻仙]
 
 ::poetry
 ---
-title: 幻仙
+title: 幻仙 - 仙凡论
 author: 落憾
-footer: 仙凡论
 ---
 白发飘，着仙袍，手拂轻尘踏逍遥，
 世间谁与共今宵，赏尽山河美好。

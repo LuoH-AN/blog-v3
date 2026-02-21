@@ -9,9 +9,8 @@ tags: [写作, 花下人]
 
 ::poetry
 ---
-title: 花下人
+title: 花下人 - 其三
 author: 落憾
-footer: 其三
 ---
 花间一壶酒，剑客于千秋。
 逍遥游世间，金银不可求。

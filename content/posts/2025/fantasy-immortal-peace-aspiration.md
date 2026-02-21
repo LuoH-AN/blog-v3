@@ -1,5 +1,5 @@
 ---
-title: 幻仙-太平愿
+title: 幻仙 - 太平愿
 description: 烈士的鲜血在空中弥漫，他地的亲人时常挂念。
 image: https://cdn2.elh.dpdns.org/picture/2025/44fa232f93370e5f76c87aa08d9cc7d7.avif
 date: 2025-05-25
@@ -9,9 +9,8 @@ tags: [写作, 幻仙]
 
 ::poetry
 ---
-title: 幻仙
+title: 幻仙 - 太平愿
 author: 落憾
-footer: 太平愿
 ---
 明月当空，余云绕廖，万军争战于世间;
 呐喊杀敌，震彻大地，群英热血弥漫天;
