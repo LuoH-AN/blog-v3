@@ -180,7 +180,6 @@ onMounted(() => {
 	.tk-expand {
 		padding: 0.375rem 1rem;
 		border-radius: 0.5rem;
-		background-color: var(--c-bg-2);
 		color: var(--c-text-1);
 		transition: background-color 0.1s;
 
