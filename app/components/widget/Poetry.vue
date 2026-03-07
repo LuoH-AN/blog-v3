@@ -83,10 +83,6 @@ onMounted(() => {
 		.poetry-title {
 			margin-right: 0.5em;
 		}
-
-		.poetry-author {
-			font-style: italic;
-		}
 	}
 }
 </style>
