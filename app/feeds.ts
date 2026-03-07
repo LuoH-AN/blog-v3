@@ -99,7 +99,7 @@ export default [
 				link: 'https://lmxhl.top',
 				feed: '',
 				icon: getFavicon('lmxhl.top'),
-				avatar: 'https://lmxhl.top/wp-content/uploads/2025/08/cropped-g.jpg',
+				avatar: 'https://q.qlogo.cn/g?b=qq&nk=1942239847&s=640',
 				archs: ['Astro', 'Cloudflare'],
 				date: '2025-10-24',
 				comment: '',
