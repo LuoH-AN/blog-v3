@@ -1,5 +1,5 @@
 import type { Nav, NavItem } from '~/types/nav'
-import { pascal } from 'radash'
+import { pascalCase } from 'es-toolkit/string'
 import { Temporal } from 'temporal-polyfill'
 import blogConfig from '~~/blog.config'
 import { name, version } from '~~/package.json'
