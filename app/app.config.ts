@@ -114,7 +114,7 @@ export default defineAppConfig({
 				{ icon: 'ph:files-bold', text: '文章', url: '/' },
 				{ icon: 'ph:link-bold', text: '友链', url: '/link' },
 				{ icon: 'ph:archive-bold', text: '归档', url: '/archive' },
-				{ icon: 'ph:notebook-bold', text: '说说', url: 'https://memo.luoh.org' },
+				{ icon: 'ph:notebook-bold', text: '闲言', url: 'https://memo.luoh.org' },
 			],
 		},
 	] satisfies Nav,
