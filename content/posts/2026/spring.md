@@ -1,6 +1,6 @@
 ---
 title: 春
-description: 
+description: 洁净的大地萌出了嫩绿的新芽，溪水叮当地响着。
 image: https://cdn2.elh.dpdns.org/picture/2026/c1951584ed2990e8fdefe5b7ec041821.avif
 date: 2026-03-29
 categories: [诗词]
