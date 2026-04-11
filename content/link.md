@@ -8,9 +8,8 @@ updated: 2024-08-20 03:15:52
 - 申请要求：
   - 能够**长期更新维护**
   - 能够输出**有价值的原创内容**
-  *- 可以参考 [加入开往](https://www.travellings.cn/docs/join.html) 页面的规则*
-- 申请方式：在评论区留言或发送邮件到 :tip{text="enltlh@gmail.com" copy}
-  - 标题注明 `友链申请: 你的昵称`
+  *- 参考 [加入开往](https://www.travellings.cn/docs/join.html) 页面的规则*
+- 申请方式：在评论区留言
   - 以 :tip[任意形式]{tip="指向信息的 URL、自然语言、编程语言"} 附上友链信息
     ````md
     title: '博客名称',
