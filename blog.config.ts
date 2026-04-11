@@ -33,9 +33,9 @@ const blogConfig = {
 	article: {
 		categories: {
 			[basicConfig.defaultCategory]: { icon: 'ph:folder-dotted-bold' },
-			诗词: { icon: 'ph:notepad-bold', color: '#3ba' },
+			诗词: { icon: 'tabler:message', color: '#3ba' },
 		},
-		defaultCategoryIcon: 'ph:folder-bold',
+		defaultCategoryIcon: 'tabler:folder',
 		/** 文章版式，首个为默认版式 */
 		types: {
 			tech: {},

@@ -57,10 +57,10 @@ export default defineAppConfig({
 		copyright: `© ${Temporal.Now.plainDateISO().year.toString()} ${blogConfig.author.name}`,
 		/** 侧边栏底部图标导航 */
 		iconNav: [
-			{ icon: 'ph:house-bold', text: '主页', url: blogConfig.author.homepage },
-			{ icon: 'ph:github-logo-bold', text: 'GitHub: LuoH-AN', url: 'https://github.com/LuoH-AN' },
-			{ icon: 'ph:rss-simple-bold', text: '订阅', url: '/atom.xml' },
-			{ icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/' },
+			{ icon: 'tabler:home', text: '主页', url: blogConfig.author.homepage },
+			{ icon: 'tabler:brand-github', text: 'GitHub: LuoH-AN', url: 'https://github.com/LuoH-AN' },
+			{ icon: 'tabler:rss', text: '订阅', url: '/atom.xml' },
+			{ icon: 'ri:subway-line', text: '开往 - 博客下一站', url: 'https://www.travellings.cn/' },
 			{ icon: 'game-icons:cigale', text: '揪蝉', url: 'https://jiuchan.org/' },
 		] satisfies NavItem[],
 		/** 页脚站点地图 */
@@ -68,22 +68,22 @@ export default defineAppConfig({
 			{
 				title: '探索',
 				items: [
-					{ icon: 'ph:rss-simple-bold', text: '订阅', url: '/atom.xml' },
-					{ icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/' },
+					{ icon: 'tabler:rss', text: 'Atom订阅', url: '/atom.xml' },
+					{ icon: 'ri:subway-line', text: '开往', url: 'https://www.travellings.cn/go.html' },
 				],
 			},
 			{
 				title: '社交',
 				items: [
-					{ icon: 'ph:github-logo-bold', text: 'LuoH-AN', url: 'https://github.com/LuoH-AN' },
-					{ icon: 'ph:envelope-simple-bold', text: blogConfig.author.email, url: `mailto:${blogConfig.author.email}` },
+					{ icon: 'tabler:brand-github', text: 'LuoH-AN', url: 'https://github.com/LuoH-AN' },
+					{ icon: 'tabler:mail', text: blogConfig.author.email, url: `mailto:${blogConfig.author.email}` },
 				],
 			},
 			{
 				title: '信息',
 				items: [
 					{ icon: 'simple-icons:nuxt', text: `主题: ${pascalCase(name)} ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
-					{ icon: 'ph:certificate-bold', text: '萌ICP备20250355号', url: 'https://icp.gov.moe/?keyword=20250355' },
+					{ icon: 'tabler:certificate', text: '萌ICP备20250355号', url: 'https://icp.gov.moe/?keyword=20250355' },
 				],
 			},
 		] satisfies Nav,
@@ -111,10 +111,10 @@ export default defineAppConfig({
 		{
 			title: '',
 			items: [
-				{ icon: 'ph:files-bold', text: '文章', url: '/' },
-				{ icon: 'ph:link-bold', text: '友链', url: '/link' },
-				{ icon: 'ph:archive-bold', text: '归档', url: '/archive' },
-				{ icon: 'ph:notebook-bold', text: '闲言', url: 'https://memo.luoh.org' },
+				{ icon: 'tabler:files', text: '文章', url: '/' },
+				{ icon: 'tabler:link', text: '友链', url: '/link' },
+				{ icon: 'tabler:archive', text: '归档', url: '/archive' },
+				{ icon: 'tabler:bubble-text', text: '闲言', url: 'https://memo.luoh.org/' },
 			],
 		},
 	] satisfies Nav,
@@ -129,15 +129,15 @@ export default defineAppConfig({
 
 	themes: {
 		light: {
-			icon: 'ph:sun-bold',
+			icon: 'tabler:sun',
 			tip: '浅色模式',
 		},
 		system: {
-			icon: 'ph:monitor-bold',
+			icon: 'tabler:device-desktop',
 			tip: '跟随系统',
 		},
 		dark: {
-			icon: 'ph:moon-bold',
+			icon: 'tabler:moon',
 			tip: '深色模式',
 		},
 	},

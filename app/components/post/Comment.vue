@@ -91,7 +91,7 @@ onMounted(() => {
 					aria-label="恢复原始内容"
 					@click="undo()"
 				>
-					<Icon name="ph:arrow-u-up-left-bold" />
+					<Icon name="tabler:arrow-back-up" />
 				</button>
 
 				<ZButton
@@ -194,7 +194,24 @@ onMounted(() => {
 		border-radius: 8px;
 	}
 
-	.tk-comments-title, .tk-nick > strong {
+	.tk-expand {
+		padding: 0.375rem 1rem;
+		border-radius: 0.5rem;
+		color: var(--c-text-1);
+		transition: background-color 0.1s;
+
+		&:hover {
+			background-color: var(--c-bg-3);
+		}
+	}
+
+	.tk-preview,
+	.tk-cancel,
+	.tk-send {
+		border-radius: 8px;
+	}
+
+	.tk-comments-title, .tk-nick {
 		font-family: var(--font-creative);
 	}
 
