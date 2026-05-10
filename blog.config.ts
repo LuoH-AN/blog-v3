@@ -32,10 +32,9 @@ const blogConfig = {
 
 	article: {
 		categories: {
-			[basicConfig.defaultCategory]: { icon: 'ph:folder-dotted-bold' },
+			[basicConfig.defaultCategory]: { icon: 'tabler:circle-dashed' },
 			诗词: { icon: 'tabler:message', color: '#3ba' },
 		},
-		defaultCategoryIcon: 'tabler:folder',
 		/** 文章版式，首个为默认版式 */
 		types: {
 			tech: {},
