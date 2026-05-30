@@ -1,5 +1,5 @@
 ---
-title: 吉尔加美什
+title: 吉尔伽美什
 description: 反乌托邦式的创作，历史上伟大的英雄王。
 image: https://cdn2.elh.dpdns.org/picture/2025/eb1c8f8dd9d7c8b7bc4babd0baee70d2.avif
 date: 2025-01-20
