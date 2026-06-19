@@ -1,15 +1,15 @@
 ---
-title: 色砌 - 秋叶
+title: 砌 - 秋叶
 description: 柔软的光透着树叶，洒向公路。
 image: https://cdn2.elh.dpdns.org/picture/2026/03f7f4d52f61a525936759b9ea086625.avif
 date: 2026-01-31
 categories: [诗词]
-tags: [写作, 色砌]
+tags: [写作, 砌]
 ---
 
 ::poetry
 ---
-title: 色砌 - 秋叶
+title: 砌 - 秋叶
 author: 落憾
 ---
 泛焦堆砌池，褐叶脆声势。
