@@ -123,7 +123,7 @@ export default [
 				icon: getFavicon('ragnote.top'),
 				avatar: 'https://ragnote.top/Avatar.png',
 				archs: ['Cloudflare'],
-				date: '2026-07-8',
+				date: '2026-07-08',
 				comment: '一个技术博客，我用它记录学习过程、项目实践，以及那些让我感兴趣的事物。',
 			},
 			{
@@ -133,7 +133,7 @@ export default [
 				icon: getFavicon('blog.hcbu.cn'),
 				avatar: 'https://gitee.com/hcbug/picture1/raw/master/20260607223324364.webp',
 				archs: ['Nuxt'],
-				date: '2026-07-8',
+				date: '2026-07-08',
 				comment: '想，全是问题；做，才有答案。',
 			},
 		],
