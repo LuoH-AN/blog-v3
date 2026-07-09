@@ -70,10 +70,6 @@ export default defineNuxtConfig({
 		typescriptPlugin: true,
 	},
 
-	features: {
-		inlineStyles: false,
-	},
-
 	nitro: {
 		prerender: {
 			// 修复部分平台会在文章路径后添加 `/`，导致闪现 404 错误
@@ -88,7 +84,7 @@ export default defineNuxtConfig({
 		'/api/stats': { prerender: true, headers: { 'Content-Type': 'application/json' } },
 		'/atom.xml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
 		'/favicon.ico': { redirect: { to: blogConfig.favicon } },
-		'/zhilu.opml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
+		'/subscriptions.opml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
 	},
 
 	runtimeConfig: {
@@ -183,6 +179,12 @@ export default defineNuxtConfig({
 		},
 		experimental: {
 			sqliteConnector: 'native',
+		},
+	},
+
+	dxup: {
+		features: {
+			namedLayoutSlots: true,
 		},
 	},
 
