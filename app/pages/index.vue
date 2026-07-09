@@ -28,13 +28,15 @@ const { data: previewCount } = useAsyncData(
 	'previews:count',
 	() => queryCollection('content').where('stem', 'LIKE', 'previews/%').count(),
 )
+
+// 首页侧边栏卡片
+const { widgets } = useWidgets(['blog-stats', 'blog-tech', 'poetry'])
 </script>
 
 <template>
 <template #aside>
-	<WidgetBlogStats />
-	<WidgetBlogTech />
-	<WidgetCommGroup />
+	<!-- 更换页面时相同 key 的组件不会更新 -->
+	<component :is="widget.comp" v-for="widget in widgets" :key="widget.name" />
 </template>
 
 <BlogHeader class="mobile-only" to="/" tag="h1" />
