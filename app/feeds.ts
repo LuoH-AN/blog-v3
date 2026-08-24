@@ -13,6 +13,19 @@ export default [
 		entries: [
 			myFeed,
 			{
+				author: 'Ming',
+				sitenick: '',
+				title: 'MingBlog（Ming 博客）',
+				desc: '记录日常生活、城市影像、旅行与观察，以及认真看过、读过和听过的作品。',
+				link: 'https://mingblog.site/',
+				feed: '',
+				icon: 'https://mingblog.site/favicon.svg',
+				avatar: 'https://mingblog.site/icons/icon-512.png',
+				archs: [],
+				date: '2026-08-24',
+				comment: '',
+			},
+			{
 				author: '梦爱吃鱼',
 				sitenick: '',
 				title: '梦爱吃鱼',
