@@ -1,7 +1,7 @@
 ---
 title: 忆往
 description: 糊糊涂涂，这一学期便末了。
-image: https://i.luoh.org/file/1787803320088_2025--recall-post.avif
+image: https://i.luoh.org/file/3zRpZKAK.avif
 date: 2025-04-05
 categories: [诗词]
 tags: [写作, 杂记]

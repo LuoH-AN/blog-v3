@@ -1,7 +1,7 @@
 ---
 title: 吉尔伽美什
 description: 反乌托邦式的创作，历史上伟大的英雄王。
-image: https://i.luoh.org/file/1787803324659_2025--gilgamesh.avif
+image: https://i.luoh.org/file/VWc3TTZt.avif
 date: 2025-01-20
 categories: [诗词]
 tags: [写作, 杂记]

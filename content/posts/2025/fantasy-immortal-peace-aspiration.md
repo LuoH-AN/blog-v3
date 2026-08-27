@@ -1,7 +1,7 @@
 ---
 title: 幻仙 - 太平愿
 description: 烈士的鲜血在空中弥漫，他地的亲人时常挂念。
-image: https://i.luoh.org/file/1787803323287_2025--fantasy-immortal-peace-aspiration.avif
+image: https://i.luoh.org/file/qbXw9de8.avif
 date: 2025-05-25
 categories: [诗词]
 tags: [写作, 幻仙]

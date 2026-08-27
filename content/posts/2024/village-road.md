@@ -1,7 +1,7 @@
 ---
 title: 村路
 description: 走在乡间小路，心里却想着通天大路。
-image: https://i.luoh.org/file/1787803310333_2024--village-road.avif
+image: https://i.luoh.org/file/GM3XrjP1.avif
 date: 2024-10-12
 categories: [诗词]
 tags: [写作, 杂记]

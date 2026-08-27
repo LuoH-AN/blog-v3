@@ -1,7 +1,7 @@
 ---
 title: 花下人 - 其二
 description: 纷纷白发飘在空中，度过了百余春秋。
-image: https://i.luoh.org/file/1787803310271_2024--flower-below-human-2.avif
+image: https://i.luoh.org/file/Kco5ebjN.avif
 date: 2024-06-09
 categories: [诗词]
 tags: [写作, 花下人]

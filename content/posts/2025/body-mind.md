@@ -1,7 +1,7 @@
 ---
 title: 身心
 description: 正值青春，却念耄耋。
-image: https://i.luoh.org/file/1787803312823_2025--body-mind.avif
+image: https://i.luoh.org/file/WxAKhduH.avif
 date: 2025-03-11
 categories: [诗词]
 tags: [写作, 杂记]
