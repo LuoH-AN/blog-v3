@@ -34,6 +34,7 @@ const blogConfig = {
 		categories: {
 			[basicConfig.defaultCategory]: { icon: 'tabler:circle-dashed' },
 			诗词: { icon: 'tabler:message', color: '#3ba' },
+			文: { icon: 'tabler:writing-sign', color: '#FF9900' },
 		},
 		/** 文章版式，首个为默认版式 */
 		types: {
@@ -67,7 +68,7 @@ const blogConfig = {
 		// 自己部署的 Umami 统计服务
 		{ 'src': 'https://umi.luoh.org/script.js', 'data-website-id': 'd755863f-e0ed-4f4b-b30c-f76cc31a4f98', 'defer': true },
 		// Twikoo 评论系统
-		{ src: 'https://cdnjs.snrat.com/ajax/libs/twikoo/1.7.13/twikoo.min.js', defer: true },
+		{ src: 'https://cdnjs.snrat.com/ajax/libs/twikoo/1.7.19/twikoo.min.js', defer: true },
 		// 今日诗词 SDK
 		{ src: 'https://sdk.jinrishici.com/v2/browser/jinrishici.js', defer: true },
 	],
