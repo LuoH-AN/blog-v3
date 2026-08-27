@@ -158,17 +158,43 @@ tags: [写作, 杂记]
 
 前几日便想订票返程，谁知出现了台风红霞。不过，我这个中原人，也算是见识到了台风，这真是奇怪的第一次。
 
-![Screenshot_20260726_215344.jpg](https://i.luoh.org/file/QMyMwzPM.webp)
+::pic
+---
+src: https://i.luoh.org/file/QMyMwzPM.webp
+---
+::
 
-![Screenshot_20260726_215333.jpg](https://i.luoh.org/file/XpOZAZuO.webp)
+::pic
+---
+src: https://i.luoh.org/file/XpOZAZuO.webp
+---
+::
 
-![Screenshot_20260726_215321.jpg](https://i.luoh.org/file/wmKMn5vy.webp)
+::pic
+---
+src: https://i.luoh.org/file/wmKMn5vy.webp
+---
+::
 
-![Screenshot_20260726_215311.jpg](https://i.luoh.org/file/CXd9QAKp.webp)
+::pic
+---
+src: https://i.luoh.org/file/CXd9QAKp.webp
+---
+::
 
-![video_20260706_180553.mp4](https://i.luoh.org/file/QifKjSna.mp4)
+::video-embed
+---
+type: raw
+id: https://i.luoh.org/file/QifKjSna.mp4
+---
+::
 
-![video_20260706_182538.mp4](https://i.luoh.org/file/dw83hf6Z.mp4)
+::video-embed
+---
+type: raw
+id: https://i.luoh.org/file/dw83hf6Z.mp4
+---
+::
 
 这些都是爬梧桐山时所照。很不巧，那天下了雨，没能登上最高峰。
 
