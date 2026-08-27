@@ -1,7 +1,7 @@
 ---
 title: 故争
 description: 心心念念的故乡，因战乱而四散。
-image: https://cdn2.elh.dpdns.org/picture/2025/a4a4af142ab64465e1d1a074a41aadac.avif
+image: https://i.luoh.org/file/1787803314169_2024--homeland-war.avif
 date: 2024-12-26
 categories: [诗词]
 tags: [写作, 杂记]

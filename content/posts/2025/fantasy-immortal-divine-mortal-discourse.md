@@ -1,7 +1,7 @@
 ---
 title: 幻仙 - 仙凡论
 description: 仙人，凡人，注定天人永隔吗？
-image: https://cdn2.elh.dpdns.org/picture/2025/3e4fef1869d1f5a5dab6c8058b974315.avif
+image: https://i.luoh.org/file/1787803315098_2025--fantasy-immortal-divine-mortal-discourse.avif
 date: 2025-06-19
 categories: [诗词]
 tags: [写作, 幻仙]

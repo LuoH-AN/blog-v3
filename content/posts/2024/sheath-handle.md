@@ -1,7 +1,7 @@
 ---
 title: 鞘柄
 description: 龙凤在空中盘旋，裂痕漫天遍地，极度的炽热席卷而来。
-image: https://cdn2.elh.dpdns.org/picture/2025/870d738f726bd8fff14d8c7b8683e53d.avif
+image: https://i.luoh.org/file/1787803307344_2024--sheath-handle.avif
 date: 2024-11-06
 categories: [诗词]
 tags: [写作, 杂记]
