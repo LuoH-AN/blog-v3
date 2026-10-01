@@ -112,7 +112,7 @@ onMounted(() => {
 </section>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .z-comment {
 	margin: 3rem 1rem;
 
@@ -163,37 +163,20 @@ onMounted(() => {
 		@supports (corner-shape: squircle) {
 			corner-shape: superellipse(1.2);
 		}
+	}
 
-		&.tk-clickable {
-			cursor: auto;
-		}
+	.tk-avatar.tk-clickable {
+		cursor: auto;
 	}
 
 	.tk-time {
 		color: var(--c-text-3);
 	}
 
-	// 防止 a 被 overflow hidden
+	/* 防止 a 被 overflow hidden */
 	.tk-content {
 		margin: -0.2em;
 		padding: 0.2em;
-	}
-
-	.tk-expand {
-		padding: 0.375rem 1rem;
-		border-radius: 0.5rem;
-		color: var(--c-text-1);
-		transition: background-color 0.1s;
-
-		&:hover {
-			background-color: var(--c-bg-3);
-		}
-	}
-
-	.tk-preview,
-	.tk-cancel,
-	.tk-send {
-		border-radius: 8px;
 	}
 
 	.tk-expand {

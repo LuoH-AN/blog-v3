@@ -28,9 +28,10 @@ export default defineNuxtConfig({
 				{ rel: 'icon', href: blogConfig.favicon },
 				{ rel: 'alternate', type: 'application/atom+xml', href: '/atom.xml' },
 				{ rel: 'preconnect', href: blogConfig.twikoo.preload },
-				{ rel: 'stylesheet', href: 'https://cdnjs.snrat.com/ajax/libs/KaTeX/0.16.44/katex.min.css' },
-				// "InterVariable", "Inter", "InterDisplay"
-				{ rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
+				{ rel: 'stylesheet', href: 'https://s4.zstatic.net/npm/katex@0.16.44/dist/katex.min.css' },
+				// "InterVariable", "Inter"
+				{ rel: 'stylesheet', href: 'https://s4.zstatic.net/npm/inter-ui@4.1.1/inter-variable.css' },
+				{ rel: 'stylesheet', href: 'https://s4.zstatic.net/npm/inter-ui@4.1.1/inter.css' },
 				// "JetBrains Mono", 思源宋体 "Noto Serif SC"
 				{ rel: 'preconnect', href: 'https://fonts.gstatic.cn', crossorigin: '' },
 				{ rel: 'stylesheet', href: 'https://fonts.googleapis.cn/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Serif+SC:wght@200..900&display=swap' },
@@ -56,12 +57,12 @@ export default defineNuxtConfig({
 	],
 
 	css: [
-		'@/assets/css/animation.scss',
-		'@/assets/css/article.scss',
-		'@/assets/css/color.scss',
-		'@/assets/css/font.scss',
-		'@/assets/css/main.scss',
-		'@/assets/css/reusable.scss',
+		'@/assets/css/animation.css',
+		'@/assets/css/article.css',
+		'@/assets/css/color.css',
+		'@/assets/css/font.css',
+		'@/assets/css/main.css',
+		'@/assets/css/reusable.css',
 	],
 
 	// @keep-sorted
@@ -112,14 +113,13 @@ export default defineNuxtConfig({
 		},
 	},
 
-	vite: {
-		css: {
-			preprocessorOptions: {
-				scss: {
-					additionalData: '@use "@/assets/css/_variable.scss" as *;',
-				},
-			},
+	postcss: {
+		plugins: {
+			'postcss-nesting': {},
 		},
+	},
+
+	vite: {
 		define: {
 			/** 在生产环境启用 Vue DevTools */
 			// __VUE_PROD_DEVTOOLS__: 'true',
@@ -140,7 +140,6 @@ export default defineNuxtConfig({
 		'@bikariya/image-viewer',
 		'@bikariya/modals',
 		'@bikariya/shiki',
-		'@nuxt/a11y',
 		'@nuxt/content',
 		'@nuxt/hints',
 		'@nuxt/icon',
@@ -165,7 +164,12 @@ export default defineNuxtConfig({
 				highlight: false,
 				// @keep-sorted
 				remarkPlugins: {
-					[pluginPath('remark-music')]: {},
+					[pluginPath('remark-code-component')]: {
+						options: {
+							'mermaid': { component: 'mermaid', prop: 'code' },
+							'music-abc': { component: 'music-score', prop: 'abc' },
+						},
+					},
 					'remark-math': {},
 					'remark-reading-time': {},
 				},
