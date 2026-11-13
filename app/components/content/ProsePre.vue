@@ -38,6 +38,9 @@ const icon = computed(() => meta.value.icon || getFileIcon(props.filename) || ge
 const isWrap = ref(meta.value.wrap)
 const byteSize = computed(() => formatBytes(new TextEncoder().encode(props.code).length))
 
+// 正文使用 Shiki，移除会被 Twikoo 的全局 Prism 主题匹配的语言类。
+const codeClasses = computed(() => props.class?.split(/\s+/).filter(name => !/^lang(?:uage)?-/.test(name)))
+
 const codeblock = useTemplateRef('codeblock')
 const { copy, copied } = useCopy(codeblock)
 const shiki = useShiki()
@@ -93,7 +96,7 @@ onMounted(async () => {
 	<pre
 		ref="codeblock"
 		class="shiki scrollcheck-x"
-		:class="[props.class, { wrap: isWrap }]"
+		:class="[codeClasses, { wrap: isWrap }]"
 		v-html="rawHtml"
 	/>
 
