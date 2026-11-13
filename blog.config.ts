@@ -33,8 +33,8 @@ const blogConfig = {
 	article: {
 		categories: {
 			[basicConfig.defaultCategory]: { icon: 'tabler:circle-dashed' },
-			诗词: { icon: 'tabler:message', color: '#3ba' },
-			文: { icon: 'tabler:writing-sign', color: '#FF9900' },
+			诗词: { icon: 'tabler:feather', color: 'var(--c-category-poetry)' },
+			文: { icon: 'tabler:book', color: 'var(--c-category-prose)' },
 		},
 		/** 文章版式，首个为默认版式 */
 		types: {
