@@ -2,7 +2,8 @@
 title: 幻仙 - 仙凡论
 description: 仙人，凡人，注定天人永隔吗？
 image: https://i.luoh.org/file/9TyyNukW.avif
-date: 2025-06-19
+date: 2025-06-19 10:52:37
+type: story
 categories: [诗词]
 tags: [写作, 幻仙]
 ---

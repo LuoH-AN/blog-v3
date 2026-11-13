@@ -2,7 +2,8 @@
 title: 记夏
 description: 细雨轻柔，大雨滂沱。
 image: https://i.luoh.org/file/PKleoZn3.avif
-date: 2025-09-07 12:55:03
+date: 2025-09-07 12:43:00
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 recommend: true

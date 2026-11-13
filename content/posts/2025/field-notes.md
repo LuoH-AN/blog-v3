@@ -2,7 +2,8 @@
 title: 田记
 description: 天色湛蓝，田间翠绿，却是告别。
 image: https://i.luoh.org/file/x2QSsnxd.avif
-date: 2025-04-30
+date: 2025-04-30 19:25:03
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 ---

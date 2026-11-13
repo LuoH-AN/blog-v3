@@ -2,7 +2,8 @@
 title: 蝶恋花
 description: 蝴蝶独爱艳花，艳花也偏爱蝴蝶，它们仅为了爱吗？
 image: https://i.luoh.org/file/p0nfJFiD.avif
-date: 2024-12-01
+date: 2024-12-01 15:53:19
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 ---

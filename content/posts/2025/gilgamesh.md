@@ -2,7 +2,8 @@
 title: 吉尔伽美什
 description: 反乌托邦式的创作，历史上伟大的英雄王。
 image: https://i.luoh.org/file/VWc3TTZt.avif
-date: 2025-01-20
+date: 2025-01-20 16:17:14
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 ---

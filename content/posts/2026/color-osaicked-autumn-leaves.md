@@ -2,7 +2,8 @@
 title: 砌 - 秋叶
 description: 柔软的光透着树叶，洒向公路。
 image: https://i.luoh.org/file/9yShfCiy.avif
-date: 2026-01-31
+date: 2026-01-31 16:37:42
+type: story
 categories: [诗词]
 tags: [写作, 砌]
 ---

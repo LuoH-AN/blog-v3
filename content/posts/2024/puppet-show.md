@@ -2,7 +2,8 @@
 title: 木偶戏
 description: 那人恍若提线木偶，被财阀肆意摆弄着。
 image: https://i.luoh.org/file/Uz2oiizq.avif
-date: 2024-08-23
+date: 2024-08-23 13:43:40
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 recommend: true

@@ -2,7 +2,8 @@
 title: 大浪滔天
 description: 滔天的浪激怒了凡圣，顶着神明威压，献祭自身。
 image: https://i.luoh.org/file/Acw5Layk.avif
-date: 2024-04-20
+date: 2024-04-20 10:11:57
+type: story
 categories: [诗词]
 tags: [写作, 大浪滔天]
 recommend: true

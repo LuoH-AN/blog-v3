@@ -2,7 +2,8 @@
 title: 唠田
 description: 电车后座的我，数着田间的种种数。
 image: https://i.luoh.org/file/pOTQsBob.avif
-date: 2024-09-17
+date: 2024-09-17 16:16:14
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 ---

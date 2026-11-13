@@ -2,7 +2,8 @@
 title: 春
 description: 洁净的大地萌出了嫩绿的新芽，溪水叮当地响着。
 image: https://i.luoh.org/file/E747ANX8.webp
-date: 2026-03-29
+date: 2026-03-29 12:16:42
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 ---

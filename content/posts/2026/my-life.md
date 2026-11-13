@@ -1,7 +1,8 @@
 ---
 title: 吾之一生
 description: 尸、血、骨；情、泪、恨；悲、乐、慰。
-date: 2026-05-30 23:14:22
+date: 2026-05-30 09:20:30
+type: story
 updated: 2026-05-30 23:14:22
 image: https://i.luoh.org/file/X4uivuFW.jpg
 tags: [写作, 杂记]

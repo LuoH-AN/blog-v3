@@ -2,7 +2,8 @@
 title: 余晖
 description: 日月各显光芒，雨也来凑热闹。
 image: https://i.luoh.org/file/QE8ozysQ.avif
-date: 2025-08-08
+date: 2025-08-08 19:28:51
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 ---

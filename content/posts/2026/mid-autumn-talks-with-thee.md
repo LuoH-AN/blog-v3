@@ -2,7 +2,8 @@
 title: 中秋与伊言
 description: 今年的中秋并不似前，身旁伴着伊人。
 image: https://i.luoh.org/file/5gnlCcSB.webp
-date: 2026-10-01
+date: 2026-10-01 21:25:39
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 ---

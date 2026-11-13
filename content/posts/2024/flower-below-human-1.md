@@ -2,7 +2,8 @@
 title: 花下人 - 其一
 description: 隐士注视着湖面的波漾，花瓣落在她那长发。
 image: https://i.luoh.org/file/ZNTfozEP.avif
-date: 2024-05-15
+date: 2024-05-15 11:36:08
+type: story
 categories: [诗词]
 tags: [写作, 花下人]
 ---

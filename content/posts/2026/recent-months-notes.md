@@ -2,7 +2,8 @@
 title: 前月杂记
 description: 对今年已过去的八个月的些许总结，尝试丰富博客内容。
 image: https://i.luoh.org/file/zuak9WZA.webp
-date: 2026-08-27
+date: 2026-08-27 14:36:50
+type: story
 categories: [文]
 tags: [写作, 杂记]
 ---

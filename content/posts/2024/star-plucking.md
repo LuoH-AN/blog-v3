@@ -2,7 +2,8 @@
 title: 摘星
 description: 风在耳边轻柔地跑，我仰望星空，睡意渐起。
 image: https://i.luoh.org/file/xn1rFiPj.avif
-date: 2024-07-29
+date: 2024-07-29 21:54:05
+type: story
 categories: [诗词]
 tags: [写作, 杂记]
 ---
