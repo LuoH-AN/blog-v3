@@ -46,7 +46,7 @@ const { copy, copied } = useCopy(shareText)
 				icon="tabler:clock-edit"
 			/>
 
-			<span v-if="categories" class="post-category" :style="{ color: getCategoryColor(categories[0]) }">
+			<span v-if="categories">
 				<Icon :name="getCategoryIcon(categories[0])" />
 				{{ categories[0] }}
 			</span>
@@ -94,12 +94,6 @@ const { copy, copied } = useCopy(shareText)
 
 		.post-info {
 			filter: drop-shadow(0 1px 2px #000);
-		}
-
-		.post-category {
-			padding: 0 0.3em;
-			border-radius: 0.3em;
-			background-color: var(--c-bg-a80);
 		}
 
 		.post-title {
