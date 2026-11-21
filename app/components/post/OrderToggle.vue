@@ -35,7 +35,7 @@ function toggleDirection() {
 	<slot />
 
 	<ZDropdown trigger="focusin" tabindex="0">
-		<button :disabled="!categories">
+		<button :disabled="!categories" :style="{ color: getCategoryColor(category) }">
 			<Icon :name="getCategoryIcon(category)" />
 			<span class="order-text">{{ category ?? '全部分类' }}</span>
 		</button>
@@ -46,7 +46,13 @@ function toggleDirection() {
 				<span>全部分类</span>
 			</button>
 
-			<button v-for="item in categories" :key="item" :class="{ active: item === category }" @click="hide(), category = item">
+			<button
+				v-for="item in categories"
+				:key="item"
+				:class="{ active: item === category }"
+				:style="{ color: getCategoryColor(item) }"
+				@click="hide(), category = item"
+			>
 				<Icon :name="getCategoryIcon(item)" />
 				<span>{{ item }}</span>
 			</button>

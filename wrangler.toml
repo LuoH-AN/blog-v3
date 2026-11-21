@@ -1,0 +1,12 @@
+name = "luoh-blog"
+compatibility_date = "2026-11-21"
+workers_dev = true
+
+routes = [
+  { pattern = "blog.luoh.org/*", zone_name = "luoh.org" }
+]
+
+[assets]
+directory = "dist"
+html_handling = "drop-trailing-slash"
+not_found_handling = "404-page"

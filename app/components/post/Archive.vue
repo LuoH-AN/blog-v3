@@ -17,7 +17,7 @@ const mainDate = computed(() => props.useUpdated ? props.updated : props.date)
 	<div class="gradient-card" :style="{ '--c-accent': getCategoryColor(categories?.[0]) }">
 		<UtilLink class="article-link scrollbar-hidden scrollcheck-x" :data-transition-key="to ?? path" :to :title="description">
 			<span class="article-title">
-				<Icon v-if="showCategory" :name="getCategoryIcon(categories?.[0])" />
+				<Icon v-if="showCategory" :name="getCategoryIcon(categories?.[0])" :style="{ color: getCategoryColor(categories?.[0]) }" />
 				{{ title }}
 			</span>
 
